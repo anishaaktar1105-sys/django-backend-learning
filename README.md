@@ -30,11 +30,26 @@ learning Python backend development, Django, APIs, databases, and deployment thr
 - Git and GitHub
 
 ## Day-3
-Introduction to Django Views and URLs
-Creating function-based views
-Handling HTTP requests using HttpResponse
-Creating Home and About pages
-Configuring app-level URL patterns using core/urls.py
-Connecting app URLs to project URLs using include()
-Returning dynamic content from views using Python variables
-Testing URL endpoints locally
+- Introduction to Django Views and URLs
+- Creating function-based views
+- Handling HTTP requests using HttpResponse
+- Creating Home and About pages
+- Configuring app-level URL patterns using core/urls.py
+- Connecting app URLs to project URLs using include()
+- Returning dynamic content from views using Python variables
+- Testing URL endpoints locally
+
+
+## Day-4:Creating Multiple Apps with Views and URL Routing
+Today's Goal: Learn how to create multiple Django apps within a single project and configure their URL patterns.
+
+What I Learned:
+- Created two Django apps: blog and shop.
+- Registered the apps in INSTALLED_APPS in settings.py.
+- Created views using HttpResponse.
+- Configured separate urls.py files for each app.
+- Connected both apps to the main project using include().
+- Created a home page and an about page for the Blog app.
+- Created a home page and a products page for the Shop app.
+- Ran the development server and tested the routes in the browser.
+
