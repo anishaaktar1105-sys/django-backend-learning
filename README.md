@@ -53,3 +53,52 @@ What I Learned:
 - Created a home page and a products page for the Shop app.
 - Ran the development server and tested the routes in the browser.
 
+## Day 5: Django URL Parameters — `path()`, `re_path()` & `kwargs`
+
+- Understanding dynamic URL parameters in Django.
+- Using `path()` to capture URL values.
+- Passing parameters from URLs to views using `kwargs`.
+- Working with `year`, `month`, and `day` parameters.
+- Using `re_path()` for regular-expression-based URL routing.
+- Configuring app-level URL patterns.
+
+### Practical Implementation
+Implemented dynamic blog URLs to handle post details, user profiles, and article dates.
+
+**URL Examples:**
+- `/blog/post/1/` — Post details
+- `/blog/user/anisha/` — User profile
+- `/blog/article/2024/04/30/` — Article by date
+- `/blog/article/2024/` — Article by year
+
+### Code Example
+```python
+from django.urls import path, re_path
+from . import views
+
+urlpatterns = [
+    path('post/<int:post_id>/', views.post_details, name='post_details'),
+    path('user/<str:username>/', views.user_profile, name='user_profile'),
+    path(
+        'article/<int:year>/<int:month>/<int:day>/',
+        views.article_details,
+        name='article_details'
+    ),
+    re_path(
+        r'^article/(?P<year>[0-9]{4})/$',
+        views.article_by_year,
+        name='article_by_year'
+    ),
+]
+```
+
+### Key Learnings
+- `path()` uses converters such as `int` and `str` to capture URL values.
+- `re_path()` uses regular expressions to match URL patterns.
+- Django passes captured values to view functions as arguments.
+- URL names make routes easier to reference throughout a project.
+
+### Day 5 Outcome
+Successfully explored dynamic URL routing and learned how to pass URL parameters to Django views.
+
+**Next Goal:** Learn more about Django views, templates, and dynamic content rendering.
