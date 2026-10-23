@@ -91,14 +91,51 @@ urlpatterns = [
     ),
 ]
 ```
+## Day 6: Django Templates — Project-Level Setup & HTML Rendering
+
+- Understanding Django's template system.
+- Setting up a project-level `templates` folder.
+- Creating an HTML template using `home.html`.
+- Configuring the `TEMPLATES` setting in `settings.py`.
+- Creating a view function to render an HTML page.
+- Connecting URL patterns to views.
+
+### Practical Implementation
+Created a `home.html` template and rendered it through a Django view.
+
+**Template File:** `templates/home.html`
+
+**HTML Elements Used:**
+- `<title>` — Sets the webpage title to *My First Webpage*.
+- `<h1>` — Displays the heading *Hello World*.
+- `<p>` — Displays paragraph text.
+
+### Code Example
+
+**views.py**
+```python
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'home.html')
+```
+
+**urls.py**
+```python
+from django.contrib import admin
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+]
+
 
 ### Key Learnings
-- `path()` uses converters such as `int` and `str` to capture URL values.
-- `re_path()` uses regular expressions to match URL patterns.
-- Django passes captured values to view functions as arguments.
-- URL names make routes easier to reference throughout a project.
+- Django templates separate HTML presentation from Python logic.
+- The `render()` function loads a template and returns an HTTP response.
+- The `DIRS` option in `settings.py` can specify the project-level templates directory.
+- URL patterns connect incoming requests to the appropriate views.
 
-### Day 5 Outcome
-Successfully explored dynamic URL routing and learned how to pass URL parameters to Django views.
 
-**Next Goal:** Learn more about Django views, templates, and dynamic content rendering.
