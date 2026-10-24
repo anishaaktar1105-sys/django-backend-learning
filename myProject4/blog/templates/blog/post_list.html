@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Blog Page Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} Blog Page Title {% endblock %}
+
+{% block content %}
     <h1>Welcome to Blog page</h1>
     <p>This is the blog content area.</p>
-</body>
-</html>
+{% endblock %}
