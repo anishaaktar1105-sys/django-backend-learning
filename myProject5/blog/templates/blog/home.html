@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1 Template Basic</title>
+</head>
+<body>
+     
+    <h1>Template Basic</h1>
+<h2>This content will be displayed.</h2>
+    <p>Welcome to the blog home page!</p>
+
+    {% comment %}
+    <h1>Hey</h1>
+    {% endcomment %}
+    {% comment %}single variable{% endcomment %}
+    <p>Name:{{name}}</p>
+    <p>Age:{{age}}</p>
+    {% comment %} List Access {% endcomment %}
+    <p>
+        First Skill: {{ skills.0 }}
+    </p>
+    <p>
+        Skills:{{ skills }}
+    </p>
+
+ {% comment %} Onject attribute {% endcomment %}
+ <p> User Name:{{ user.name }}</p>
+ <p> User Age:{{ user.age }}</p>
+
+  {% comment %} Dictionary {% endcomment %}
+  <h2>Blog Information</h2>
+    <p>Title:{{ blogs.title }}</p>
+    <p>Created At:{{ blogs.created_at }}</p>
+    <p>Content:{{ blogs.content }}</p>
+    <p>Content:{{ blogs.content|safe }}</p>
+    <p>Author Name:{{ blogs.author.name }}</p>
+{% comment %} Default Value {% endcomment %}
+
+<p>Default Empty Value:{{ empty_value|default:"No value provided" }}</p>
+<p>Default Value:{{ empty_value|default_if_none:"No Data" }}</p>
+
+
+</body>
+</html>
