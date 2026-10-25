@@ -114,3 +114,13 @@ Created a webpage displaying the title *My First Webpage*, the heading *Hello Wo
 - `myProject4/shop/templates/shop/product_list.html`
 - `myProject4/myProject4/urls.py`
 - `myProject4/myProject4/templates/base.html` (removed during restructuring)
+
+
+### Day 7 — Django Templates: Basics & Variables
+- Learned Django template setup and project/app structure.
+- Rendered templates using "views.py".
+- Learned template variables using "{{ variable }}".
+- Practiced accessing dictionary, list, and object attributes.
+- Learned nested variables, such as "{{ user.profile.name }}".
+- Explored default values using "default" and "default_if_none".
+- Learned the "safe" and "escape" template filters.
