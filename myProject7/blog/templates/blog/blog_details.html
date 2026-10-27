@@ -29,6 +29,23 @@
     {%else%}
     <p>{{post.number}} is Odd</p>
     {%endif %}
+
+    {%comment%}List Filters{% endcomment %}
+    <p><b>First tag:</b> {{ post.tags }}</p>
+    <p><b>First tag:</b> {{ post.tags|first }}</p>
+    <p><b>last tag:</b> {{ post.tags|last }}</p>
+    <p><b>total tags:</b> {{ post.tags|length }}</p>
+    <p><b>Slice tag(First 2):</b> {{ post.tags|slice:":2" }}</p>
+    <p><b>Join tag:</b> {{ post.tags|join:", " }}</p>
+<hr>
+{%comment%}Yes /No  and pluralisation{% endcomment %}
+    <p><b>Default:</b> {{ post.title|default:"No Title" }}</p>
+    <p><b>Default If None:</b> {{ post.title|default_if_none:"No Title" }}</p>
+    <p><b>Yes/No:</b> {{ post.is_published|yesno:"Published,Not Published" }}</p>
+
+
+
+
 </body>
 
 </html>
