@@ -39,11 +39,21 @@
     <p><b>Join tag:</b> {{ post.tags|join:", " }}</p>
 <hr>
 {%comment%}Yes /No  and pluralisation{% endcomment %}
-    <p><b>Default:</b> {{ post.title|default:"No Title" }}</p>
-    <p><b>Default If None:</b> {{ post.title|default_if_none:"No Title" }}</p>
-    <p><b>Yes/No:</b> {{ post.is_published|yesno:"Published,Not Published" }}</p>
+   <p>Author available?: {{ post.author|yesno:"Yes,No,Maybe" }}</p>
+   <p>Comments Count: {{ post.comments_count }} Comment{{post.comments_count|pluralize}}</p>
 
+<hr>
+{%comment%}Date & Time Filters{% endcomment %}
 
+<p><b>Created At:</b> {{ post.created_at }}</p>
+<p><b>Created At (Formatted):</b> {{ post.created_at|date:"D d M Y" }}</p>
+<p><b>Created At (Time):</b> {{ post.created_at|time:"H:i:s" }}</p>
+
+ <hr>
+{%comment%}Encoding and Formatting Filters{% endcomment %}
+<p><b>Title Encoded:</b> {{ post.title|urlencode }}</p>
+<p><b>Float Formatting:</b> {{ 1234.567891|floatformat:2 }}</p>
+<p><b>Float Formatting:</b> {{ post.price|floatformat:2 }}</p>
 
 
 </body>

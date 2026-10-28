@@ -7,7 +7,7 @@ def blog_details(request):
   "description": "Django is a high level Python web framework that encourages rapid development and clean, pragmatic design."
   " Built by experienced developers, it takes care of much of the hassle of web development, so you can focus on writing your app without"
   " needing to reinvent the wheel. It’s free and open source.",
-    "author": None,
+    "author": "Yes",
     "created_at": datetime(2026,10,27,21,16),
     "comments_count": 5,
     "tags": ["django", "python", "web development"],
